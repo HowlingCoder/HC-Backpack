@@ -1,0 +1,61 @@
+// Recipe
+{
+    id HCBackpack.Recipe.Generic
+    type ItemRecipe
+    abstract
+
+    name = Basic Backpack
+    commandType = CraftItemCommand
+    craftingLoop = ClothCraftingLoop
+    type = <HCBackpack.Items.Generic>
+	progressMultiplier = .1
+	qualityDifficulty = 1.625
+    skillCurve = .825
+    yield = 1
+    batch = 1
+
+    craftAt = 
+    [
+        <Oct.Props.CraftingTable>
+    ]
+
+    ingredients = 
+    [
+        {
+            type ItemRecipeIngredient
+            filter = <Oct.Items.Stackable.Skins.Leather>
+            count = 5
+        }
+    ]
+}
+
+{
+    id HCBackpack.Recipe.Simple
+    type ItemRecipe
+    inherit HCBackpack.Recipe.Generic
+
+    name = Simple Backpack
+    type = <HCBackpack.Items.Simple>
+
+    researchEntry = <HCBackpack.Research.Simple>
+}
+{
+    id HCBackpack.Recipe.Normal
+    type ItemRecipe
+    inherit HCBackpack.Recipe.Generic
+
+    name = Normal Backpack
+    type = <HCBackpack.Items.Normal>
+
+    researchEntry = <HCBackpack.Research.Normal>
+}
+{
+    id HCBackpack.Recipe.Advanced
+    type ItemRecipe
+    inherit HCBackpack.Recipe.Generic
+
+    name = Advanced Backpack
+    type = <HCBackpack.Items.Advanced>
+
+    researchEntry = <HCBackpack.Research.Advanced>
+}

@@ -1,0 +1,101 @@
+
+// Item Category
+{
+	id Oct.Items.Categories.Gear.Backpacks
+	type ItemCategory
+	
+	name = Backpacks
+	parent = <Oct.Items.Categories.Gear>
+}
+
+// Item
+{
+    id HCBackpack.Items.Generic
+    type InstancedItemType
+	inherit Oct.Items.Buffable
+
+	name = Basic Backpackx
+    pluralName = Basic Backpacksx
+    itemClass = InstancedItem
+
+    canStore = true 
+     
+	cosmeticPrefab = true
+	squishPrefab = true
+    category = <Oct.Items.Categories.Gear.Backpacks>
+    
+
+    equipmentSlot = Secondary
+    equipmentCosmetic = 
+	{
+		type StaticCharacterCosmetic			
+        boneTransforms =
+        [
+            {
+                type StaticCharacterCosmeticTransform
+                bone = Spine3
+                translation = vector(0, 0, -.025)
+                rotation = rotation(3.5, 0, 0)
+            }
+        ]
+	}
+    staticBuffs = 
+    [
+        {
+            type StatModifierInstancedItemStaticBuff
+            statName = Hauling
+            modifier = 5.0
+            perc = false
+            good = true
+        }
+    ]
+    
+}
+
+{
+    id HCBackpack.Items.Simple
+    type InstancedItemTypeGenerator 
+    inherit HCBackpack.Items.Generic
+
+    name = Simple Backpack
+    pluralName = Simple Backpacks
+    
+    
+    bitSlots =
+    [
+        <Oct.Items.Pack.Traveler.Slot.Top>
+    ]
+}
+{
+    id HCBackpack.Items.Normal
+    type InstancedItemTypeGenerator
+    inherit HCBackpack.Items.Generic
+
+    name = Normal Backpack
+    pluralName = Normal Backpacks
+
+    bitSlots =
+    [
+        <Oct.Items.Pack.Traveler.Slot.Middle>
+        <Oct.Items.Pack.Traveler.Slot.Top>
+    ]
+}
+
+{
+    id HCBackpack.Items.Advanced
+    type InstancedItemTypeGenerator
+    inherit HCBackpack.Items.Generic
+
+    name = Advanced Backpack
+    pluralName = Advanced Backpacks
+    
+   
+    bitSlots =
+    [
+        <Oct.Items.Pack.Traveler.Slot.Bottom>
+        <Oct.Items.Pack.Traveler.Slot.Middle>
+        <Oct.Items.Pack.Traveler.Slot.Top>
+    ]
+
+}
+

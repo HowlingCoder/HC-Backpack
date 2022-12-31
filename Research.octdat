@@ -1,0 +1,60 @@
+// Research
+{
+    id HCBackpack.Research
+    type ResearchEntry
+    abstract
+
+    verb = to Craft
+    skill = Crafting
+}
+{
+	id HCBackpack.Research.Backpacks
+	type ResearchEntry
+    inherit HCBackpack.Research
+	
+	name = Backpacks
+	description = Stop howling like a 🐺, start hauling like a bear! 
+	category = true
+	tierOffset = 1
+}
+{
+    id HCBackpack.Research.Generic
+    type ResearchEntry
+    abstract
+
+    inherit HCBackpack.Research
+
+    name = Backpacks
+    description = Stop howling like a 🐺, start hauling like a bear!
+    prerequisite = <HCBackpack.Research.Backpacks>
+    category = false
+    tierOffset = 2
+    free = false
+}
+
+{
+    id HCBackpack.Research.Simple
+    type ResearchEntry
+    inherit HCBackpack.Research.Generic
+
+    name = Simple Backpacks
+    tooltipProvider = <HCBackpack.Recipe.Simple>
+}
+{
+    id HCBackpack.Research.Normal
+    type ResearchEntry
+    inherit HCBackpack.Research.Generic
+
+    name = Normal Backpacks
+    tooltipProvider = <HCBackpack.Recipe.Normal>
+    prerequisite = <HCBackpack.Research.Simple>
+}
+{
+    id HCBackpack.Research.Advanced
+    type ResearchEntry
+    inherit HCBackpack.Research.Generic
+
+    name = Advanced Backpacks
+    tooltipProvider = <HCBackpack.Recipe.Advanced>
+    prerequisite = <HCBackpack.Research.Normal>
+}
