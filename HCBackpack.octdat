@@ -10,26 +10,26 @@
 
 // Item
 {
+    abstract
     id HCBackpack.Items.Generic
     type InstancedItemType
 	inherit Oct.Items.Buffable
 
-	name = Basic Backpackx
-    pluralName = Basic Backpacksx
     itemClass = InstancedItem
-
-    canStore = true 
      
 	cosmeticPrefab = true
-	squishPrefab = true
     category = <Oct.Items.Categories.Gear.Backpacks>
     
 
     equipmentSlot = Secondary
-    equipmentCosmetic = 
-	{
-		type StaticCharacterCosmetic			
-        boneTransforms =
+ 
+    
+}
+{
+    abstract
+    id HCBackpack.Items.Generic.Cosmetic
+    type StaticCharacterCosmetic
+    boneTransforms =
         [
             {
                 type StaticCharacterCosmeticTransform
@@ -38,7 +38,28 @@
                 rotation = rotation(3.5, 0, 0)
             }
         ]
-	}
+
+}
+
+{
+    id HCBackpack.Items.Simple
+    type InstancedItemType 
+    inherit HCBackpack.Items.Generic
+
+    name = Simple Backpack
+    pluralName = Simple Backpacks
+    
+    
+	prefab = 
+	[
+		{
+			type Prefab
+            path = /Art/Items/Backpacks/Traveler/BackpackTop/Backpack_Bedroll_Top.fbx
+            Name = Bedroll
+            behavior = ItemBehavior
+        }
+    ]
+    
     staticBuffs = 
     [
         {
@@ -49,26 +70,11 @@
             good = true
         }
     ]
-    
 }
-
-{
-    id HCBackpack.Items.Simple
-    type InstancedItemTypeGenerator 
-    inherit HCBackpack.Items.Generic
-
-    name = Simple Backpack
-    pluralName = Simple Backpacks
-    
-    
-    bitSlots =
-    [
-        <Oct.Items.Pack.Traveler.Slot.Top>
-    ]
-}
+/*
 {
     id HCBackpack.Items.Normal
-    type InstancedItemTypeGenerator
+    type InstancedItemType
     inherit HCBackpack.Items.Generic
 
     name = Normal Backpack
@@ -79,11 +85,22 @@
         <Oct.Items.Pack.Traveler.Slot.Middle>
         <Oct.Items.Pack.Traveler.Slot.Top>
     ]
+    
+    staticBuffs = 
+    [
+        {
+            type StatModifierInstancedItemStaticBuff
+            statName = Hauling
+            modifier = 5.0
+            perc = false
+            good = true
+        }
+    ]
 }
 
 {
     id HCBackpack.Items.Advanced
-    type InstancedItemTypeGenerator
+    type InstancedItemType
     inherit HCBackpack.Items.Generic
 
     name = Advanced Backpack
@@ -96,6 +113,18 @@
         <Oct.Items.Pack.Traveler.Slot.Middle>
         <Oct.Items.Pack.Traveler.Slot.Top>
     ]
+    
+    staticBuffs = 
+    [
+        {
+            type StatModifierInstancedItemStaticBuff
+            statName = Hauling
+            modifier = 5.0
+            perc = false
+            good = true
+        }
+    ]
 
 }
 
+*/

@@ -39,7 +39,7 @@
 
     researchEntry = <HCBackpack.Research.Simple>
 }
-{
+/*{
     id HCBackpack.Recipe.Normal
     type ItemRecipe
     inherit HCBackpack.Recipe.Generic
@@ -58,4 +58,4 @@
     type = <HCBackpack.Items.Advanced>
 
     researchEntry = <HCBackpack.Research.Advanced>
-}
+}*/

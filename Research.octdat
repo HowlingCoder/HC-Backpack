@@ -40,7 +40,7 @@
     name = Simple Backpacks
     tooltipProvider = <HCBackpack.Recipe.Simple>
 }
-{
+/*{
     id HCBackpack.Research.Normal
     type ResearchEntry
     inherit HCBackpack.Research.Generic
@@ -57,4 +57,4 @@
     name = Advanced Backpacks
     tooltipProvider = <HCBackpack.Recipe.Advanced>
     prerequisite = <HCBackpack.Research.Normal>
-}
+}*/
