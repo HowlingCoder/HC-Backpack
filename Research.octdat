@@ -40,21 +40,29 @@
     name = Simple Backpacks
     tooltipProvider = <HCBackpack.Recipe.Simple>
 }
-/*{
-    id HCBackpack.Research.Normal
-    type ResearchEntry
-    inherit HCBackpack.Research.Generic
 
-    name = Normal Backpacks
-    tooltipProvider = <HCBackpack.Recipe.Normal>
-    prerequisite = <HCBackpack.Research.Simple>
+// Ressources
+{
+	id HCBackpack.Research.Ressources
+	type ResearchEntry
+    inherit HCBackpack.Research
+	
+    prerequisite = <HCBackpack.Research.Backpacks>
+	name = Ressources
+	description = Stop howling like a 🐺, start hauling like a bear! 
+	category = true
+	tierOffset = 2
 }
 {
-    id HCBackpack.Research.Advanced
+    id HCBackpack.Research.LeatherStraps
     type ResearchEntry
-    inherit HCBackpack.Research.Generic
 
-    name = Advanced Backpacks
-    tooltipProvider = <HCBackpack.Recipe.Advanced>
-    prerequisite = <HCBackpack.Research.Normal>
-}*/
+    inherit HCBackpack.Research
+
+    name = Leather Straps
+    description = Stop howling like a 🐺, start hauling like a bear!
+    prerequisite = <HCBackpack.Research.Ressources>
+    category = false
+    tierOffset = 3
+    free = false
+}

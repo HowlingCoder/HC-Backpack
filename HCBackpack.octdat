@@ -43,77 +43,36 @@
 
 {
     id HCBackpack.Items.Simple
-    type InstancedItemType 
+    type InstancedItemTypeGenerator 
     inherit HCBackpack.Items.Generic
 
     name = Simple Backpack
     pluralName = Simple Backpacks
     
     
+	equipmentCosmetic = 
+	{
+        type StaticCharacterCosmetic
+        inherit Oct.Items.GrapplingHook.Cosmetic
+    }
+
 	prefab = 
-	[
+	
 		{
 			type Prefab
-            path = /Art/Items/Backpacks/Traveler/BackpackTop/Backpack_Bedroll_Top.fbx
+            path = /Art/Items/Backpacks/Traveler/BackpackTop/Backpack_Pack_Top.fbx
             Name = Bedroll
             behavior = ItemBehavior
         }
-    ]
     
-    staticBuffs = 
-    [
-        {
-            type StatModifierInstancedItemStaticBuff
-            statName = Hauling
-            modifier = 5.0
-            perc = false
-            good = true
-        }
-    ]
-}
-/*
-{
-    id HCBackpack.Items.Normal
-    type InstancedItemType
-    inherit HCBackpack.Items.Generic
-
-    name = Normal Backpack
-    pluralName = Normal Backpacks
-
-    bitSlots =
-    [
-        <Oct.Items.Pack.Traveler.Slot.Middle>
-        <Oct.Items.Pack.Traveler.Slot.Top>
-    ]
-    
-    staticBuffs = 
-    [
-        {
-            type StatModifierInstancedItemStaticBuff
-            statName = Hauling
-            modifier = 5.0
-            perc = false
-            good = true
-        }
-    ]
-}
-
-{
-    id HCBackpack.Items.Advanced
-    type InstancedItemType
-    inherit HCBackpack.Items.Generic
-
-    name = Advanced Backpack
-    pluralName = Advanced Backpacks
-    
-   
+     
     bitSlots =
     [
         <Oct.Items.Pack.Traveler.Slot.Bottom>
         <Oct.Items.Pack.Traveler.Slot.Middle>
         <Oct.Items.Pack.Traveler.Slot.Top>
     ]
-    
+
     staticBuffs = 
     [
         {
@@ -124,7 +83,4 @@
             good = true
         }
     ]
-
 }
-
-*/

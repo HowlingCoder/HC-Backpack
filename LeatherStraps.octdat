@@ -1,0 +1,34 @@
+
+{
+    id HCBackpack.Items.LeatherStraps
+	type StackedItemType
+	inherit Oct.Items.Stackable
+
+    name = Leather Straps
+	itemClass = StackedItem
+	category =  <Oct.Items.Categories.Gear.Backpacks>
+	stackLimit = 100
+	rainDropDecay = .03125
+	outdoorDecayAfter = 4y
+	value = 1000
+	fixedTradeValue = false
+	factionOwnership = false
+    
+    canJunk = true
+    
+
+	prefab = 
+	{
+		type Prefab
+		path = \Art\LeatherStraps.fbx
+		name = Leather Straps
+        behavior = StackedItemBehavior
+	
+        material = 
+        {
+            type Material
+            _AlbedoMap = tex(/Art/Items/Leather/Textures/leather_base_texture.png, bilinear, mips)    
+            _Smoothness = .3          
+        }
+	}
+}
